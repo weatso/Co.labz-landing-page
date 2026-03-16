@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 
@@ -11,16 +11,6 @@ import Image from "next/image";
 const games = [
   { id: 1, title: "The Day Z: Rampage", genre: "Action Survival", engine: "Roblox Studio", image: "/ViewGameRoblox1.png" },
   { id: 2, title: "A Warrior Tale", genre: "RPG Adventure", engine: "Custom Engine", image: "/ViewGame8Bit1.png" },
-];
-
-const news = [
-  { id: 1, date: "Feb 20, 2026", category: "Devlog", title: "We accidentally deleted the main character.", excerpt: "So, about that update we promised... turns out Ctrl+Z doesn't work on production servers. Here is how we fixed it." },
-  { id: 2, date: "Feb 15, 2026", category: "Update", title: "Blocky Brawlers: Season 2 is LIVE!", excerpt: "New maps, new blocks, and a grappling hook that definitely does not break the game physics (we hope)." }
-];
-
-const faqs = [
-  { q: "Are your games free to play?", a: "Most of our core games are absolutely free! We sell optional cool cosmetics so we can pay for server costs and buy more dog treats." },
-  { q: "Can I join Co.Labz as a developer or artist?", a: "We are always looking for wild talent! Hit us up on our Discord server and share your portfolio." }
 ];
 
 // --- ANIMASI ---
@@ -117,11 +107,6 @@ export default function Home() {
             An independent game studio crafting chaotic co-op experiences and playful worlds. We make games that bite back.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-6 z-10 relative">
-            <Button size="lg" className="sketchy-button bg-[var(--color-colabz-orange)] text-white text-xl py-8 px-10 hover:bg-[#e6551b]">
-              PLAY OUR GAMES
-            </Button>
-          </div>
         </motion.div>
       </motion.section>
 

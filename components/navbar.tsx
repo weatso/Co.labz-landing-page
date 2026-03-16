@@ -10,12 +10,12 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { name: "Games", href: "/#games" },
-    { name: "Manifesto", href: "/manifesto" },
-    { name: "Lab Rats", href: "/team" },
-    { name: "Sketchbook", href: "/art" },
-    { name: "Loot", href: "/merch" },
-  ];
+  { name: "Games", sub: "Play Now", href: "/#games" },
+  { name: "Manifesto", sub: "About Us", href: "/manifesto" },
+  { name: "Lab Rats", sub: "Our Team", href: "/team" },
+  { name: "Sketchbook", sub: "Devlog & Art", href: "/art" },
+  { name: "Loot", sub: "Merch Store", href: "/merch" },
+];
 
   return (
     <header className="relative z-50 max-w-7xl mx-auto">
@@ -26,14 +26,24 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* --- MENU DESKTOP / LAPTOP --- */}
-        <div className="hidden md:flex gap-6 lg:gap-8 font-black text-lg lg:text-xl uppercase tracking-wider items-center">
-          {menuItems.map((item) => (
-            <Link key={item.name} href={item.href} className="hover:text-[var(--color-colabz-orange)] hover:-translate-y-1 transition-transform">
-              {item.name}
-            </Link>
-          ))}
-        </div>
+       {/* --- MENU DESKTOP / LAPTOP --- */}
+<div className="hidden md:flex gap-6 lg:gap-8 font-black text-lg lg:text-xl uppercase tracking-wider items-center">
+  {menuItems.map((item) => (
+    <Link 
+      key={item.name} 
+      href={item.href} 
+      className="group relative flex flex-col items-center hover:-translate-y-1 transition-transform"
+    >
+      <span className="text-[var(--color-colabz-dark)] group-hover:text-[var(--color-colabz-orange)] transition-colors">
+        {item.name}
+      </span>
+      {/* Tooltip fungsional yang muncul saat di-hover */}
+<span className="absolute top-full mt-8 text-xs font-bold bg-[var(--color-colabz-dark)] text-white px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-[3px_3px_0_0_var(--color-colabz-orange)] pointer-events-none">
+  {item.sub}
+</span>
+    </Link>
+  ))}
+</div>
 
         {/* --- TOMBOL HAMBURGER MOBILE & TABLET --- */}
         <button 
